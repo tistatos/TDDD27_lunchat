@@ -9,11 +9,14 @@ get an overview of your interest.
 
 ## Technical specs
 I'm going to use Ruby on rails together with React+redux. I will you PostgreSQL
-as the database. The app will use login via Oauth to Facebook. The app will also
-use Yelp to find restaurant.
+as the database.
 
-I'm going to use Heroku for deployment
+The app will use login via Oauth to Facebook. The app will also
+use Yelp API to find restaurant nearby.
 
-I'd like to use some sort of CI for testing but haven't found anything that
-matches my need and that are free. Any suggestions?
+I will be using the free version of travis CI for test runs. The master branch
+is protected from direct pushes and all Pull request to the master branch must
+pass tests to be able to merge.
+
+I'm going to use Heroku for deployment with automagic deployment from github.
 
