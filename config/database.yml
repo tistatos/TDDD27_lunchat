@@ -1,0 +1,17 @@
+# PostgreSQL
+default: &default
+  adapter: postgresql
+  enconding: unicode
+  pool: 5
+  username: lunchat
+  password: lunch
+  host: localhost
+
+development:
+  <<: *default
+  database: lunchat_dev
+
+test:
+  <<: *default
+  database: lunchat_test
+
