@@ -17,9 +17,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-#
+# jquery
+gem 'jquery-rails'
+
 # devise for user handling
 gem 'devise'
+gem 'omniauth-facebook'
+
 # lets use react!
 gem 'react-rails'
 
@@ -41,6 +45,8 @@ group :development do
   gem 'better_errors'
   # see emails in browser
   gem 'letter_opener'
+  # too many secrets => cootys rat semen
+  gem 'figaro'
 end
 
 group :production do
