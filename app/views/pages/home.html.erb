@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <p>
+    <%= @user.name %>
+  </p>
+  <p>
+    <%= @user.email %>
+  </p>
+  <%= image_tag(@user.image) %>
+  <p>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  </p>
+<% else %>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% end %>
+
