@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
     end
   end
+
+  def first_name
+    self.name.split.first
+  end
 end
 

@@ -1,15 +1,3 @@
-<% if logged_in? %>
-  <p>
-    <%= current_user.name %>
-  </p>
-  <p>
-    <%= current_user.email %>
-  </p>
-  <%= image_tag(current_user.image) %>
-  <p>
-  <%= link_to "Sign out", signout_path, :method => :delete %>
-  </p>
-<% else %>
-  <%= link_to "Sign in with Facebook", signin_path %>
-<% end %>
+<h1>Welcome to lunchat !</h1>
+<%= link_to "About", about_path %>
 
