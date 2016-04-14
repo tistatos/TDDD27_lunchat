@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "api/users/omniauth_callbacks" }
+  get '/auth/:provider/callback' => 'sessions#create'
+
+  get '/signin' => 'sessions#new', :as => :signin
+  delete '/signout' => 'sessions#destroy', :as => :signout
+
 
 end
 
