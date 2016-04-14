@@ -20,9 +20,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # jquery
 gem 'jquery-rails'
 
-# devise for user handling
-gem 'devise'
+# omniauth for facebook
 gem 'omniauth-facebook'
+
+
 
 # lets use react!
 gem 'react-rails'
