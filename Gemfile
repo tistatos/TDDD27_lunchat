@@ -20,10 +20,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # jquery
 gem 'jquery-rails'
 
+# JEEEET IS DA SHEEET
+gem 'jeet'
 # omniauth for facebook
 gem 'omniauth-facebook'
 
-
+# Facebook API
+#gem 'fb_graph2'
 
 # lets use react!
 gem 'react-rails'
@@ -50,6 +53,10 @@ group :development do
   gem 'letter_opener'
   # too many secrets => cootys rat semen
   gem 'figaro'
+end
+
+group :test do
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do
