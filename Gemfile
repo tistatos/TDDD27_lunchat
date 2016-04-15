@@ -23,11 +23,17 @@ gem 'jeet'
 # omniauth for facebook
 gem 'omniauth-facebook'
 
+gem 'faye-websocket', '0.10.0'
+gem 'websocket-rails'
+
 # Facebook API
 #gem 'fb_graph2'
 
 # lets use react!
 gem 'react-rails'
+
+#browserify, because require is nice
+gem 'browserify-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

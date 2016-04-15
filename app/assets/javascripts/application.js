@@ -17,3 +17,12 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+//= require websocket_rails/main
+
+dispatcher = new WebSocketRails("localhost:3000/websocket")
+dispatcher.subscribe('state')
+
+dispatcher.bind('connect', function(data) {
+  console.log(data.message);
+});
+
