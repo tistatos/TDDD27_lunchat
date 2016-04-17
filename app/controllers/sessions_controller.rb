@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.from_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to root_url
+    redirect_to user_path(current_user.id)
   end
 
   def new

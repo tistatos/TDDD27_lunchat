@@ -1,0 +1,43 @@
+<footer>
+  <div class="container">
+    <div class="footer-column">
+      <p>
+        Lunchat är ett projekt skapat i kursen Avancerad Webprogrammering (TDDD27)
+        på Linköpings universitet
+      </p>
+    </div>
+    <div class="footer-column">
+      <ul>
+      <% if logged_in? %>
+        <li>
+          <%= link_to "Din profil", user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to "Dina aktiviteter", user_path(current_user.id) %>
+        </li>
+        <li>
+        <%= link_to "Logga ut", signout_path, :method => :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign in with Facebook", signin_path %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <p>
+        Lunchat är skapat av Erik Sandrén
+      </p>
+        <div class="footer-column">
+          <%= fa_icon "twitter 2x" %>
+        </div>
+        <div class="footer-column">
+          <%= fa_icon "github 2x" %>
+        </div>
+        <div class="footer-column">
+          <%= fa_icon "linkedin 2x" %>
+        </div>
+    </div>
+</footer>
+

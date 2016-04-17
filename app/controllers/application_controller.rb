@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
 
+  def authenticate_user
+    if !logged_in?
+      redirect_to root_path
+    end
+  end
+
   helper_method :current_user, :logged_in?
 end
 

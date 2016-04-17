@@ -1,3 +1,19 @@
-<h1>Welcome to lunchat !</h1>
-<%= link_to "About", about_path %>
+<% header_class 'transparent' %>
+<div class="beamer">
+  <div class="container">
+    <div class="frame">
+      <div class="logo">
+        <%= image_tag('logotype.png') %>
+        <h1>Meet, greet and eat!</h1>
+        <h3>
+          Lunchat lets you meet new people or your friends for a lunch
+          and discuss common interests.
+        </h3>
+      </div>
+      <div class="login">
+        <%= link_to image_tag("fb_login", class: "login-btn" ), signin_path %>
+      </div>
+    </div>
+  </div>
+</div>
 

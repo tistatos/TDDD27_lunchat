@@ -20,6 +20,9 @@ gem 'jquery-rails'
 
 # JEEEET IS DA SHEEET
 gem 'jeet'
+
+gem 'font-awesome-rails'
+
 # omniauth for facebook
 gem 'omniauth-facebook'
 
