@@ -1,0 +1,45 @@
+<footer>
+  <div class="container">
+    <div class="footer-column">
+      <p>
+        <%= t('footer-info') %>
+      </p>
+    </div>
+    <div class="footer-column">
+      <ul>
+      <% if logged_in? %>
+        <li>
+          <%= link_to t('profile'), user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to t('activities'), user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to t('search_restaurants'), restaurants_path %>
+        </li>
+        <li>
+        <%= link_to t('logout'), signout_path, :method => :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t('signin'), signin_path %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <p>
+        <%= t('footer-creator') %>
+      </p>
+        <div class="footer-column">
+          <%= link_to (fa_icon "twitter 2x"), "http://www.twitter.com/tistatos_" %>
+        </div>
+        <div class="footer-column">
+          <%= link_to (fa_icon "github 2x"), "http://www.github.com/tistatos"  %>
+        </div>
+        <div class="footer-column">
+          <%= link_to (fa_icon "linkedin 2x"), "https://se.linkedin.com/in/eriksandren"  %>
+        </div>
+    </div>
+</footer>
+

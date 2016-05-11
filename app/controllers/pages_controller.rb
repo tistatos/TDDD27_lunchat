@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @user = current_user
+    if logged_in?
+      redirect_to activities_path
+    end
   end
   def about
   end

@@ -2,14 +2,12 @@ source 'https://rubygems.org'
 #ruby version
 ruby '2.2.3'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
+# Use postgresql
 gem 'pg'
 # puma webserver
 gem 'puma'
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -20,12 +18,26 @@ gem 'coffee-rails', '~> 4.1.0'
 # jquery
 gem 'jquery-rails'
 
-# devise for user handling
-gem 'devise'
+gem 'font-awesome-rails'
+gem 'boostrap-sass'
+gem 'bourbon'
+gem 'neat'
+
+# omniauth for facebook
 gem 'omniauth-facebook'
+
+gem 'faye-websocket', '0.10.0'
+gem 'websocket-rails'
+
+# Facebook API
+gem 'fb_graph2'
+gem 'geocoder'
 
 # lets use react!
 gem 'react-rails'
+
+#browserify, because require is nice
+gem 'browserify-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -49,6 +61,10 @@ group :development do
   gem 'letter_opener'
   # too many secrets => cootys rat semen
   gem 'figaro'
+end
+
+group :test do
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do

@@ -1,0 +1,48 @@
+
+div.beamer {
+  background-image: image-url('lunch-beamer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 800px;
+  height:100%;
+  padding-top: 160px;
+}
+
+div.logo {
+  text-align: center;
+  color: $white;
+  h1 {
+    font-weight: 400;
+    font-size: 8em;
+    font-family: 'YeahPapa';
+    margin-bottom: 4px;
+    margin-top: 32px;
+  }
+}
+.frame {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: rgba(0,0,0,0.25);
+  margin-bottom: 100px;
+  border-radius: 60px;
+}
+
+.login {
+  img {
+    border-radius:5px;
+  }
+  padding-top: 30px;
+
+  text-align: center;
+}
+.info_bubbles {
+  padding-top: 50px;
+  .bubble {
+    text-align: center;
+  }
+}
+
+.bubble_img {
+  border-radius: 150px;
+}
+

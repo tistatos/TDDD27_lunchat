@@ -1,15 +1,19 @@
-<% if user_signed_in? %>
-  <p>
-    <%= @user.name %>
-  </p>
-  <p>
-    <%= @user.email %>
-  </p>
-  <%= image_tag(@user.image) %>
-  <p>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  </p>
-<% else %>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-<% end %>
+<% header_class 'transparent' %>
+<div class="beamer">
+  <div class="container">
+    <div class="frame">
+      <div class="logo">
+        <%= image_tag('logotype.png') %>
+        <h1>Meet, greet and eat!</h1>
+        <h3>
+          Lunchat lets you meet new people or your friends for a lunch
+          and discuss common interests.
+        </h3>
+      </div>
+      <div class="login">
+        <%= link_to image_tag("fb_login", class: "login-btn" ), signin_path %>
+      </div>
+    </div>
+  </div>
+</div>
 

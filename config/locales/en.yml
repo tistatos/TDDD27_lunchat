@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  footer-creator: 'Lunchat was created by Erik Sandrén'
+  footer-info: 'Lunchat is a project created in the course advanced webprogramming (TDDD27) at Linköping university'
+  signin: 'Sign in with Facebook'
+  profile: 'Your profile'
+  activities: 'Your activities'
+  logout: 'Log out'
+  restaurants: 'Restaurants'
+

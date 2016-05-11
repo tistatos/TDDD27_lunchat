@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Restauranger i Linköping</h1>
+  <section class="resturants">
+    <% @restaurants.each do |r| %>
+      <div class="restaurant">
+        <% if r.image_url %>
+          <%= image_tag(r.image_url) %>
+        <%else%>
+          <%= image_tag("http://placekitten.com/100/100") %>
+        <%end%>
+        <p> <%= image_tag(r.rating_img_url) %> </p>
+        <p> <%= r.name %> </p>
+        <p> <%= r.id %> </p>
+        <% if r.getTables.nil? %>
+          <p> No tables</p>
+        <%else%>
+          <p> has tables</p>
+        <%end%>
+      </div>
+    <%end%>
+  </section>
+
+  <div class="yelp-info">
+    Sökresultatet kommer från:
+    <%= image_tag("yelp-logo-medium.png") %>
+  </div>
+
+</div>
+
