@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Restauranger i Linköping</h1>
+  <%= react_component("RestaurantList", city: 'Linköping', resturants: '') %>
   <section class="resturants">
     <% @restaurants.each do |r| %>
       <div class="restaurant">
@@ -10,7 +11,6 @@
         <%end%>
         <p> <%= image_tag(r.rating_img_url) %> </p>
         <p> <%= r.name %> </p>
-        <p> <%= r.id %> </p>
         <% if r.getTables.nil? %>
           <p> No tables</p>
         <%else%>
