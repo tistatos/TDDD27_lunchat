@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
 
+  def request_ip
+    if Rails.env.development?
+       ip = '130.236.133.166'
+    else
+       request.remote_ip
+    end
+  end
+
   def authenticate_user
     if !logged_in?
       redirect_to root_path

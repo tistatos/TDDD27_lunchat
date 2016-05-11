@@ -18,10 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # jquery
 gem 'jquery-rails'
 
-# JEEEET IS DA SHEEET
-gem 'jeet'
-
 gem 'font-awesome-rails'
+gem 'boostrap-sass'
+gem 'bourbon'
+gem 'neat'
 
 # omniauth for facebook
 gem 'omniauth-facebook'
@@ -30,7 +30,8 @@ gem 'faye-websocket', '0.10.0'
 gem 'websocket-rails'
 
 # Facebook API
-#gem 'fb_graph2'
+gem 'fb_graph2'
+gem 'geocoder'
 
 # lets use react!
 gem 'react-rails'

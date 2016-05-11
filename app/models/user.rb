@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.image = auth.info.image
       user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
     end
   end
 

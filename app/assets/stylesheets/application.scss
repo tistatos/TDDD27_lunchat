@@ -1,15 +1,21 @@
 /*
  *= require font-awesome
  */
-@import 'jeet';
+@import 'bourbon';
+@import 'neat';
 @import 'fonts';
 @import 'variables';
 @import 'pages';
 @import 'header';
 @import 'footer';
+@import 'restaurants';
+@import 'activities';
+@import 'users';
 
-div.container {
-  @include center(960px);
+
+.container {
+  padding-left: 10px;
+  @include outer-container;
 }
 
 html,
@@ -20,9 +26,11 @@ body > #content{
   height: 100%;
   min-height: 100%;
   margin: 0;
-
 }
 
+#content > .container {
+  margin-top: 100px;
+}
 
 a {
   color: $darker_green;

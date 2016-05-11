@@ -1,7 +1,7 @@
 <nav class="<%= yield :header_class %>">
   <div class="container">
     <div class="header-logo">
-      <%= link_to image_tag('logotype.png', size: "64x40"), root_path %>
+      <%= link_to image_tag('logotype.png', size: "64x40"), activities_path %>
     </div>
     <ul class="header-menu">
       <% if logged_in? %>
@@ -10,14 +10,17 @@
           <%= link_to current_user.first_name, user_path(current_user.id) %>
         </li>
         <li class="menu-item">
-          <%= link_to "Aktiviteter", user_path(current_user.id) %>
+          <%= link_to t('activities'), activities_path %>
         </li>
         <li class="menu-item">
-          <%= link_to "Sign out", signout_path, :method => :delete %>
+          <%= link_to t('restaurants'), restaurants_path %>
+        </li>
+        <li class="menu-item">
+          <%= link_to t('logout'), signout_path, :method => :delete %>
         </li>
       <% else %>
         <li class="menu-item">
-          <%= link_to "Sign in with Facebook", signin_path %>
+          <%= link_to "signin", signin_path %>
         </li>
       <% end %>
     </ul>
