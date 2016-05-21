@@ -1,16 +1,22 @@
-var RestaurantList = React.createClass({
-  propTypes: {
-    city: React.PropTypes.string
-  },
+class RestaurantList extends React.Component {
+  componentWillMount() {
+    this.props.fetchRestaurants();
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>Restauranger i {this.props.city}</h1>
-        <img src={this.props.image}/>
-        <div>Tables: {this.props.tables}</div>
+        <section className="restaurants">
+          {this.props.restaurants.map(
+            (restaurant, i) =>
+              <Restaurant key={i} restaurant={restaurant}/>
+             )}
+        </section>
       </div>
     );
   }
-});
+}
+
+export default RestaurantList;
 

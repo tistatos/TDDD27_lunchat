@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
-//= require components
-//= require_tree .
 //= require websocket_rails/main
+//= require_tree ./components
+
+require('./main');
 

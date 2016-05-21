@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511072249) do
+ActiveRecord::Schema.define(version: 20160519095314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20160511072249) do
     t.text     "yelpid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "image"
+    t.string   "rating"
   end
 
   create_table "tables", force: :cascade do |t|

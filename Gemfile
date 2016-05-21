@@ -35,6 +35,8 @@ gem 'geocoder'
 
 # lets use react!
 gem 'react-rails'
+#gem 'react-rails-hot-loader', :git => 'git://github.com/rmosolgo/react-rails-hot-loader.git'
+
 
 #browserify, because require is nice
 gem 'browserify-rails'

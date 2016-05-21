@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @fb_user.authenticate(current_user.oauth_token)
     @fb_user.fetch
 
-    p @fb_user.likes
+    #p @fb_user.likes
     if current_user.id == @user.id
       @this_user = true
     end
