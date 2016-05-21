@@ -4,6 +4,7 @@ import rootReducer from '../reducers/index';
 
 export const defaultState = {
   currentUser : [],
+  activities: [],
   restaurants : [],
   tables : []
 };

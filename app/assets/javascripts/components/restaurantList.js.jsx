@@ -13,6 +13,10 @@ class RestaurantList extends React.Component {
               <Restaurant key={i} restaurant={restaurant}/>
              )}
         </section>
+        <div className="yelp-info">
+          Sökresultatet kommer från:
+          {/*<%= image_tag("yelp-logo-medium.png") %>*/}
+        </div>
       </div>
     );
   }

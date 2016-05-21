@@ -48,10 +48,38 @@ export function fetchRestaurants() {
     });
   }
 }
+export function fetchCurrentUser() {
+  const request = axios.get('/users.json');
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'FETCH_CURRENT_USER', payload: data})
+    });
+  }
+}
+
+export function fetchUser(userId) {
+  const request = axios.get('/users.json');
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'FETCH_CURRENT_USER', payload: data})
+    });
+  }
+}
+
 export function suggestTime(time) {
   return {
     type: 'SUGGEST_TIME',
     time
+  }
+}
+
+export function signOut() {
+  const request = axios.delete('/signout');
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'SIGN_OUT', payload: data}) });
   }
 }
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:index, :show, :update]
   resources :restaurants, :activities
 
   get '/auth/:provider/callback' => 'sessions#create'

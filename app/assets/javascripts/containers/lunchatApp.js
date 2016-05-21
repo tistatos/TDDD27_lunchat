@@ -6,7 +6,9 @@ import MainComponent from '../components/mainComponent.js.jsx';
 function mapStateToProps(state) {
   return {
     restaurants: state.restaurants,
-    tables: state.tables
+    tables: state.tables,
+    activities: state.activities,
+    currentUser: state.currentUser
   }
 }
 
