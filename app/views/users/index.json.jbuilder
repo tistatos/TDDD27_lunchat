@@ -1,3 +1,3 @@
-json.extract! @user, :name, :image
+json.extract! @user, :name, :image, :uid, :id
 json.first (@user.first_name)
 

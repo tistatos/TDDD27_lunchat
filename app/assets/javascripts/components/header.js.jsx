@@ -11,8 +11,9 @@ class Header extends React.Component {
   }
   userLink() {
     if(this.props.currentUser) {
+      const userlink = '/users/' + this.props.currentUser.id
       return (
-          <Link to={'/activities'}>
+          <Link to={userlink}>
             <img className="user-menu-img" src={this.props.currentUser.image} />
              {this.props.currentUser.first}
           </Link>
@@ -27,7 +28,7 @@ class Header extends React.Component {
         <div className="container">
           <div className="header-logo">
             <Link to={'/activities'}>
-            {/*<img src={"<%= image_url('logotype.png')%>"} />*/}
+            <img src="images/logotype.png" />
             </Link>
           </div>
           <ul className="header-menu">
@@ -45,9 +46,9 @@ class Header extends React.Component {
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="" onClick={this._userSignOut}>
+              <a href="/signout">
                 Logga ut
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

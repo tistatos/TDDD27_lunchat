@@ -29,6 +29,7 @@ body > #content{
 }
 
 .main-container {
+  @include outer-container;
   margin-top: 100px;
 }
 

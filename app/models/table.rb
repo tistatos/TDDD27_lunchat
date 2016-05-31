@@ -1,6 +1,6 @@
 class Table < ActiveRecord::Base
-  belongs_to :Restaurant
-  belongs_to :User
-  has_many :User
+  belongs_to :restaurant
+  belongs_to :user
+  has_many :users
 end
 

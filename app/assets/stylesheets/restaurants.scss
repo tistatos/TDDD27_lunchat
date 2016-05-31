@@ -9,6 +9,13 @@ section {
 .restaurant {
   @include span-columns(3);
   @include omega(4n);
+  margin-bottom: 40px;
+  .image {
+    width:100%;
+  }
+  .rating {
+    text-align: center;
+  }
 }
 
 .yelp-info {

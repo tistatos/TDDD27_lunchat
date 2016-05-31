@@ -31,11 +31,12 @@ class RestaurantsController < ApplicationController
     end
     @restaurants = []
     businesses.each do |b|
-      restaurant = Restaurant.new
+      restaurant = Restaurant.find_or_create_by(yelpid: b.id)
       restaurant.name = b.name
       restaurant.rating = b.rating_img_url
       restaurant.image = b.image_url
       restaurant.yelpid = b.id
+      restaurant.link = b.url
       @restaurants.push(restaurant)
     end
   end

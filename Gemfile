@@ -30,7 +30,7 @@ gem 'faye-websocket', '0.10.0'
 gem 'websocket-rails'
 
 # Facebook API
-gem 'fb_graph2'
+gem 'koala'
 gem 'geocoder'
 
 # lets use react!

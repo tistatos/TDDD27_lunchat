@@ -10,12 +10,12 @@ class RestaurantList extends React.Component {
         <section className="restaurants">
           {this.props.restaurants.map(
             (restaurant, i) =>
-              <Restaurant key={i} restaurant={restaurant}/>
+              <Restaurant key={i} restaurant={restaurant} createTable={this.props.createTable}/>
              )}
         </section>
         <div className="yelp-info">
           Sökresultatet kommer från:
-          {/*<%= image_tag("yelp-logo-medium.png") %>*/}
+            <img src="images/yelp-logo-medium.png"/>
         </div>
       </div>
     );

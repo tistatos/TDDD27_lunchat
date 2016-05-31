@@ -5,12 +5,14 @@ class MainComponent extends React.Component {
   componentWillMount() {
     this.props.fetchCurrentUser();
   }
+
+            //{React.cloneElement(this.props.children, this.props)}
   render() {
     return (
         <div>
           <Header {...this.props}/>
           <div className="main-container">
-            {React.cloneElement(this.props.children, this.props)}
+          {this.props.children}
           </div>
           <Footer {...this.props}/>
         </div>

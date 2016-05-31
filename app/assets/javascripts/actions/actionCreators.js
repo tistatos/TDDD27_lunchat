@@ -9,10 +9,14 @@ export function newMessage(message, author) {
 }
 
 export function createTable(restaurant, creator) {
-  return {
-    type: 'CREATE_TABLE',
-    restaurant,
-    creator
+  const request = axios.post('/tables.json', {
+        yid: restaurant
+      });
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'CREATE_TABLE', payload: data})
+    });
   }
 }
 
@@ -39,11 +43,17 @@ export function leaveTable(restaurant, tableId, user) {
   }
 }
 
-export function fetchRestaurants() {
-  const request = axios.get('/restaurants.json');
+export function fetchRestaurants(city = undefined) {
+  let requestEndPoint = '/restaurants.json';
+  if(city !== undefined) {
+    requestEndPoint += "?city=" + city;
+  }
+
+  let request = axios.get(requestEndPoint);
 
   return (dispatch) => {
     request.then(({data}) => {
+      console.log(data);
       dispatch({type: 'FETCH_RESTAURANTS', payload: data})
     });
   }
@@ -59,11 +69,12 @@ export function fetchCurrentUser() {
 }
 
 export function fetchUser(userId) {
-  const request = axios.get('/users.json');
+  const request = axios.get('/users/' + userId  + '.json');
 
   return (dispatch) => {
     request.then(({data}) => {
-      dispatch({type: 'FETCH_CURRENT_USER', payload: data})
+      console.log(data);
+      dispatch({type: 'FETCH_USER', payload: data})
     });
   }
 }
@@ -72,14 +83,6 @@ export function suggestTime(time) {
   return {
     type: 'SUGGEST_TIME',
     time
-  }
-}
-
-export function signOut() {
-  const request = axios.delete('/signout');
-  return (dispatch) => {
-    request.then(({data}) => {
-      dispatch({type: 'SIGN_OUT', payload: data}) });
   }
 }
 
