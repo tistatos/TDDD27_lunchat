@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tables
+  has_and_belongs_to_many :tables, :joint_table => :tables_users
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

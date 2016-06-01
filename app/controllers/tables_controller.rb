@@ -5,9 +5,9 @@ class TablesController < ApplicationController
   def create
     user = current_user
     @table = Table.create
-    @table.user = user
-    p params
     @table.restaurant = Restaurant.find_or_create_by(yelpid: params[:yid])
+    @table.owner = user
+    @table.users << user
     @table.save
   end
 end

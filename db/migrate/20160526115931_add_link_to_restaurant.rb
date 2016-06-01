@@ -3,3 +3,4 @@ class AddLinkToRestaurant < ActiveRecord::Migration
     add_column :restaurants, :link, :string
   end
 end
+
