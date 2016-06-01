@@ -1,4 +1,4 @@
-class Activity extends React.Component{
+class ActivityComponent extends React.Component{
   render() {
     return (
       <div className="activity">

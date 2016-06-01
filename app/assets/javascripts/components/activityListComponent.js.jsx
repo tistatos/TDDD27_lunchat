@@ -1,4 +1,4 @@
-class ActivityList extends React.Component{
+class ActivityListComponent extends React.Component{
   render() {
     return (
       <div className="activities">
@@ -11,5 +11,4 @@ class ActivityList extends React.Component{
   }
 }
 
-export default ActivityList;
-
+export default ActivityListComponent;

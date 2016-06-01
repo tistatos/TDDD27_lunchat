@@ -6,7 +6,6 @@ class MainComponent extends React.Component {
     this.props.fetchCurrentUser();
   }
 
-            //{React.cloneElement(this.props.children, this.props)}
   render() {
     return (
         <div>

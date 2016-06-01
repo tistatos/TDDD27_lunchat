@@ -1,41 +1,23 @@
-class Restaurant extends React.Component{
+class RestaurantComponent extends React.Component{
   constructor() {
     super();
     this._handleTableClick = this._handleTableClick.bind(this);
   }
 
   _handleTableClick() {
-    console.log(this.props)
     this.props.createTable(this.props.restaurant.yelpid)
   }
 
   render() {
-    const {name, image, rating, link, tables} = this.props.restaurant;
+    const restaurant = this.props.restaurants.filter( (r) => { return (r.yelpid == this.props.yid) } )[0];
+    const {name, image, rating, link, tables} = restaurant;
+    let restaurantImage;
+
     if(image) {
       restaurantImage = <img src={image}/>
     }
     else {
       restaurantImage = <img src="http://placekitten.com/g/100/100"/>
-    }
-
-    if(tables.length == 0) {
-      tablelist = (
-          <div className="table-list">
-            <div className="create-table-button">
-              <a onClick={this._handleTableClick}> Skapa Bord </a>
-            </div>
-          </div>
-          )
-    }
-    else {
-      tablelist = (
-          <div className="table-list">
-            <TableList tables={tables}/>
-            <div className="create-table-button">
-              <a onClick={this._handleTableClick}> Skapa Bord </a>
-            </div>
-          </div>
-          )
     }
 
     return (
@@ -51,9 +33,16 @@ class Restaurant extends React.Component{
             <img src={rating}/>
           </div>
         </a>
-        {tablelist}
+        <div className="tables">
+          <TableList tables={tables} currentUser={this.props.currentUser}/>
+          <div className="create-table-button">
+            <a onClick={this._handleTableClick}> Skapa Bord </a>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+export default RestaurantComponent;
 

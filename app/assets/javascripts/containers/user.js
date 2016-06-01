@@ -1,11 +1,11 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
-import RestaurantList from '../components/restaurantList.js.jsx';
+import UserComponent from '../components/userComponent.js.jsx';
 
 function mapStateToProps(state) {
   return {
-    restaurants: state.restaurants,
+    user: state.user,
     currentUser: state.currentUser
   }
 }
@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch);
 }
 
-const RestaurantListComponent = connect(mapStateToProps, mapDispatchToProps)(RestaurantList);
+const User = connect(mapStateToProps, mapDispatchToProps)(UserComponent);
 
-export default RestaurantListComponent;
+export default User;
 

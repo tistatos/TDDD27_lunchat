@@ -13,13 +13,11 @@ class User < ActiveRecord::Base
   end
 
   def picture
-    facebook = Koala::Facebook::API.new(self.oauth_token)
-    facebook. get_picture('me', type: :large)
-
+    facebookAPI.get_picture('me', type: :large)
   end
 
   def friends
-    self.facebookAPI.get_connections("me", "friends?fields=id,name,picture")
+    facebookAPI.get_connections("me", "friends?fields=id,name,picture")
   end
 
   def self.getLikes
@@ -51,8 +49,8 @@ class User < ActiveRecord::Base
     self.name.split.first
   end
   private
-  def self.facebookAPI
-    facebook = Koala::Facebook::API.new(self.oauth_token)
+  def facebookAPI
+    Koala::Facebook::API.new(self.oauth_token)
   end
 end
 

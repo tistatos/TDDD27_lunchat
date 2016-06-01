@@ -1,4 +1,6 @@
-class RestaurantList extends React.Component {
+import Restaurant from '../containers/restaurant';
+
+class RestaurantListComponent extends React.Component {
   componentWillMount() {
     this.props.fetchRestaurants();
   }
@@ -10,7 +12,7 @@ class RestaurantList extends React.Component {
         <section className="restaurants">
           {this.props.restaurants.map(
             (restaurant, i) =>
-              <Restaurant key={i} restaurant={restaurant} createTable={this.props.createTable}/>
+              <Restaurant key={i} yid={restaurant.yelpid} />
              )}
         </section>
         <div className="yelp-info">
@@ -22,5 +24,5 @@ class RestaurantList extends React.Component {
   }
 }
 
-export default RestaurantList;
+export default RestaurantListComponent;
 

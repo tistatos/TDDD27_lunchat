@@ -5,7 +5,7 @@ function addTable(state, action) {
 
       return [
         ...state.slice(0,i),
-        { ...state[i], tables: state[i].tables.concat(action.id) },
+        { ...state[i], tables: state[i].tables.concat(action) },
         ...state.slice(i+1)
       ]
     }

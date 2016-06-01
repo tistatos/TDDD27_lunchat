@@ -53,7 +53,6 @@ export function fetchRestaurants(city = undefined) {
 
   return (dispatch) => {
     request.then(({data}) => {
-      console.log(data);
       dispatch({type: 'FETCH_RESTAURANTS', payload: data})
     });
   }
@@ -73,7 +72,6 @@ export function fetchUser(userId) {
 
   return (dispatch) => {
     request.then(({data}) => {
-      console.log(data);
       dispatch({type: 'FETCH_USER', payload: data})
     });
   }

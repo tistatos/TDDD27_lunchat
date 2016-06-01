@@ -1,2 +1,2 @@
-json.extract! @table, :id, :restaurant_id
+json.extract! @table, :id, :owner, :users, :restaurant_id
 
