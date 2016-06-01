@@ -1,5 +1,4 @@
 class Restaurant < ActiveRecord::Base
-  #validates :yelpid, precence: true
-  has_many :table
+  has_many :tables
 end
 

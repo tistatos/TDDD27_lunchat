@@ -28,7 +28,8 @@ body > #content{
   margin: 0;
 }
 
-#content > .container {
+.main-container {
+  @include outer-container;
   margin-top: 100px;
 }
 
