@@ -1,4 +1,4 @@
-class Table extends React.Component{
+class TableComponent extends React.Component{
   constructor() {
     super();
     this._handleLeaveClick = this._handleLeaveClick.bind(this);
@@ -14,7 +14,11 @@ class Table extends React.Component{
   }
 
   render() {
-    if(this.props.table.owner.id == this.props.currentUser.id) {
+    const restaurant = this.props.restaurants.filter( (r) => { return (r.yelpid == this.props.restaurant) } )[0];
+    const table = restaurant.tables.filter( (t) => { return (t.id == this.props.table_id); })[0];
+    let ownsTable;
+
+    if(table.owner.id == this.props.currentUser.id) {
       ownsTable = ( <div className="owner">
                       <i className="fa fa-star"></i>
                     </div> );
@@ -24,7 +28,7 @@ class Table extends React.Component{
                     </div> );
     }
 
-    const userFriendsAtTable = this.props.table.users.filter( (u) => {
+    const userFriendsAtTable = table.users.filter( (u) => {
       for(let i = 0; i < this.props.currentUser.friends; i++) {
         if(u.uid === this.props.currentUser.friends[i].id) {
           return true;
@@ -33,13 +37,13 @@ class Table extends React.Component{
       }
     })
 
-    tableLink = '/table/' + this.props.table.id
+    let tableLink = '/table/' + table.id;
 
     return (
       <div className="table">
         {ownsTable}
         <div className="users">
-          <i className="fa fa-users"></i> {userFriendsAtTable.length}/{this.props.table.users.length}
+          <i className="fa fa-users"></i> {userFriendsAtTable.length}/{table.users.length}
         </div>
         <div className="leave" onClick={this._handleLeaveClick}>
           <i className="fa fa-times"></i>
@@ -48,4 +52,6 @@ class Table extends React.Component{
     );
   }
 }
+
+export default TableComponent;
 

@@ -1,15 +1,18 @@
+import TableList from '../containers/tableList.js';
+
 class RestaurantComponent extends React.Component{
   constructor() {
     super();
     this._handleTableClick = this._handleTableClick.bind(this);
+    this.restaurant = undefined;
   }
 
   _handleTableClick() {
-    this.props.createTable(this.props.restaurant.yelpid)
+    this.props.createTable(this.restaurant.yelpid)
   }
 
   render() {
-    const restaurant = this.props.restaurants.filter( (r) => { return (r.yelpid == this.props.yid) } )[0];
+    const restaurant = this.restaurant = this.props.restaurants.filter( (r) => { return (r.yelpid == this.props.yid) } )[0];
     const {name, image, rating, link, tables} = restaurant;
     let restaurantImage;
 
@@ -34,7 +37,7 @@ class RestaurantComponent extends React.Component{
           </div>
         </a>
         <div className="tables">
-          <TableList tables={tables} currentUser={this.props.currentUser}/>
+          <TableList restaurant={restaurant.yelpid} tables={tables} currentUser={this.props.currentUser}/>
           <div className="create-table-button">
             <a onClick={this._handleTableClick}> Skapa Bord </a>
           </div>
