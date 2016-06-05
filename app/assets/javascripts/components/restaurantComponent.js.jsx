@@ -8,7 +8,7 @@ class RestaurantComponent extends React.Component{
   }
 
   _handleTableClick() {
-    this.props.createTable(this.restaurant.yelpid)
+    this.props.createTable(this.restaurant);
   }
 
   render() {
@@ -20,7 +20,8 @@ class RestaurantComponent extends React.Component{
       restaurantImage = <img src={image}/>
     }
     else {
-      restaurantImage = <img src="http://placekitten.com/g/100/100"/>
+      restaurantImage = <img src="http://loremflickr.com/100/100/restaurant"/>
+
     }
 
     return (
@@ -29,13 +30,13 @@ class RestaurantComponent extends React.Component{
             <h2 className="name">
               {name}
             </h2>
+        </a>
           <div className="image">
             { restaurantImage }
           </div>
           <div className="rating">
             <img src={rating}/>
           </div>
-        </a>
         <div className="tables">
           <TableList restaurant={restaurant.yelpid} tables={tables} currentUser={this.props.currentUser}/>
           <div className="create-table-button">

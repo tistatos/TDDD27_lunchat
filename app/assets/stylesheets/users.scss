@@ -7,6 +7,10 @@
 }
 
 .profile-info {
-  @include span-columns(4);
+  @include span-columns(10);
+}
+
+.user-small {
+  @include span-columns(12);
 }
 

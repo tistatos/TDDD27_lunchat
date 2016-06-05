@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :update]
   resources :restaurants
 
+
   resources :tables
 
   get '/auth/:provider/callback' => 'sessions#create'

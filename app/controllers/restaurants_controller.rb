@@ -5,10 +5,6 @@ class RestaurantsController < ApplicationController
     @res_json = @restaurants.as_json
   end
 
-  def create
-    @table = Restaurant.find(params[:yelpid]).tables.create
-  end
-
   def get_restaurants
     if params[:city]
       @city = params[:city]
@@ -37,6 +33,7 @@ class RestaurantsController < ApplicationController
       restaurant.image = b.image_url
       restaurant.yelpid = b.id
       restaurant.link = b.url
+      restaurant.save
       @restaurants.push(restaurant)
     end
   end

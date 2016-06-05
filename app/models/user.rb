@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
     facebookAPI.get_connections("me", "friends?fields=id,name,picture")
   end
 
-  def self.getLikes
-    likes = self.facebookAPI.get_connections("me","likes?fields=name,category,category_list")
+  def getLikes
+    likes = facebookAPI.get_connections("me","likes?fields=name,category,category_list")
 
     likes_dict = Hash.new()
     while !likes.nil?

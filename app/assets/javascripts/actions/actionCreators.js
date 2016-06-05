@@ -8,9 +8,10 @@ export function newMessage(message, author) {
   }
 }
 
-export function createTable(restaurant, creator) {
+export function createTable(restaurant) {
   const request = axios.post('/tables.json', {
-        yid: restaurant
+        yid: restaurant.yelpid,
+        name: restaurant.name
       });
 
   return (dispatch) => {
@@ -20,18 +21,34 @@ export function createTable(restaurant, creator) {
   }
 }
 
-export function removeTable(restaurant, tableId) {
-  return {
-    type: 'REMOVE_TABLE',
-    tableId
+export function destroyTable(tableId) {
+  const request = axios.delete('/tables/'+tableId + '.json');
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'DESTROY_TABLE', payload: data})
+    });
   }
 }
 
-export function joinTable(restaurant, tableId, user) {
-  return {
-    type: 'JOIN_TABLE',
-    tableId,
-    user
+export function joinTable(tableId) {
+  const request = axios.put('/tables/'+ tableId + '/join.json');
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({type: 'JOIN_TABLE', payload: data})
+    });
+  }
+}
+
+export function fetchTables() {
+  const request = axios.get('/tables.json');
+
+  return (dispatch) => {
+    request.then(({data}) => {
+      console.log(data);
+      dispatch({type: 'FETCH_TABLES', payload: data})
+    });
   }
 }
 
