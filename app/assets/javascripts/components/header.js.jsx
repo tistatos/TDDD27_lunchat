@@ -27,7 +27,7 @@ class Header extends React.Component {
       <nav>
         <div className="container">
           <div className="header-logo">
-            <Link to={'/activities'}>
+            <Link to={'/tables'}>
             <img src="images/logotype.png" />
             </Link>
           </div>
@@ -36,8 +36,8 @@ class Header extends React.Component {
               {this.userLink()}
             </li>
             <li className="menu-item">
-              <Link to={'/activities'}>
-                Aktiviteter
+              <Link to={'/tables'}>
+                Bord
               </Link>
             </li>
             <li className="menu-item">

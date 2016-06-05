@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, browserHistory, Handler} from 'react-router'
 import LunchatApp from './lunchatApp';
 import RestaurantList from '../containers/restaurantList.js';
 import User from '../containers/user.js';
-import ActivityList from '../components/activityListComponent.js.jsx';
+import ActivityList from '../containers/activityList.js';
 
 const {store, history} = configureStore();
 
@@ -17,8 +17,7 @@ export default class Root extends React.Component {
             <Route path="/" component={LunchatApp}>
               <Route path="/restaurants" component={RestaurantList}></Route>
               <Route path="/users/:id" component={User}></Route>
-              <Route path="/activities" component={ActivityList}></Route>
-              <Route path="/table/:id" component={ActivityList}></Route>
+              <Route path="/tables" component={ActivityList}></Route>
             </Route>
           </Router>
         </Provider>

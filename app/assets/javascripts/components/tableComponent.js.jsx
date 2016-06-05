@@ -1,22 +1,29 @@
+import { Link } from 'react-router';
+
 class TableComponent extends React.Component{
   constructor() {
     super();
     this._handleLeaveClick = this._handleLeaveClick.bind(this);
+    this.table = undefined;
   }
 
   _handleLeaveClick() {
-    if(this.props.table.owner.id == this.props.currentUser.id) {
-      this.props.removeTable(this.props.table.id)
+    if(this.table.owner.id == this.props.currentUser.id) {
+      this.props.destroyTable(this.table.id)
     }
     else {
-      this.props.leaveTable(this.props.table.id, this.currentUser.id)
+      this.props.leaveTable(this.table.id, this.props.currentUser.id)
     }
   }
 
   render() {
     const restaurant = this.props.restaurants.filter( (r) => { return (r.yelpid == this.props.restaurant) } )[0];
-    const table = restaurant.tables.filter( (t) => { return (t.id == this.props.table_id); })[0];
+    const table = this.table = restaurant.tables.filter( (t) => { return (t.id == this.props.table_id); })[0];
     let ownsTable;
+    let partofTable;
+
+    if(!table)
+      return (<div></div>);
 
     if(table.owner.id == this.props.currentUser.id) {
       ownsTable = ( <div className="owner">
@@ -28,6 +35,21 @@ class TableComponent extends React.Component{
                     </div> );
     }
 
+    for(let i = 0; i < this.table.users.length; i++) {
+      if(this.table.users[i].id == this.props.currentUser.id) {
+        partofTable =  (
+        <div className="leave" onClick={this._handleLeaveClick}>
+          <i className="fa fa-times"></i>
+        </div> );
+        break;
+      }
+      else {
+        partofTable =  (
+        <div className="join" onClick={this._handleJoinClick}>
+          <i className="fa fa-check"></i>
+        </div> );
+      }
+    }
     const userFriendsAtTable = table.users.filter( (u) => {
       for(let i = 0; i < this.props.currentUser.friends; i++) {
         if(u.uid === this.props.currentUser.friends[i].id) {
@@ -45,9 +67,7 @@ class TableComponent extends React.Component{
         <div className="users">
           <i className="fa fa-users"></i> {userFriendsAtTable.length}/{table.users.length}
         </div>
-        <div className="leave" onClick={this._handleLeaveClick}>
-          <i className="fa fa-times"></i>
-        </div>
+        {partofTable}
       </div>
     );
   }
